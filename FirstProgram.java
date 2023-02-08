@@ -23,7 +23,29 @@ class FirstClass{
     //during the load time (The class load time) , static things will be loaded
     // public is also a keyword , and it means public things access outside the folder/ package
     // String args[] - it a command line argument
-    public static void main(String args[]){
-
-    }
+    // String - It is a predefine class in java.
+    // String - collection of chars
+    // args - it is just a variable name and it can be anything.
+    // [] - Box Syntax (Array ) - Multiple Values we can store array
+    // ... - Var Arguments (Java 5)
+    // print is use to print on console.
+    // print will print in a same line.
+    // print is a method which is coming from the PrintStream class.
+    // PrintStream class - we have an out object of PrintStream
+    // System class is use to create the out object
+    // and out object is define as static that's why we call it by className e.g System.out
+    //public static void main(String args[]){
+        public static void main(String ...arguments){
+            //System.out.print("Hello Java"); // print on same line
+            System.out.println("Hello Java"); // Hello Java\n
+            // println - print in a new line
+            // we call user define main from the standard main
+            char [] ch = {'A','m','i','t'};
+            main(ch);
+        }
+        // It is like a User Define Main (Java --> JRE ---> JVM )
+        public static void main(char [] args){
+            System.out.println("Hello Char Main....");
+        }
+    
 }
