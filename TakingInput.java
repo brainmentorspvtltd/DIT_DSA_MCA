@@ -12,14 +12,23 @@ public class TakingInput {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter ID : ");
-        int id = scanner.nextInt();
+        int id = scanner.nextInt();     // 101\n
+
+        scanner.nextLine();     // this statement will eat up the remaining \n
 
         System.out.println("Enter your name : ");
         // scanner.nextLine - used to take input in String type
+        // reads input until we press Enter (\n)
         String name = scanner.nextLine();
+        
+        // scanner.next - used to take input in String type
+        // but is can read only one word
+        // String name = scanner.next();
 
         System.out.println("Enter Age : ");
         byte age = scanner.nextByte();
+
+        scanner.nextLine();
 
         System.out.println("Enter City : ");
         String city = scanner.nextLine();
