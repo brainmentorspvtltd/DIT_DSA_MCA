@@ -9,6 +9,9 @@ public class IfElse {
         //     System.out.println("Y is greater...");
         // }
 
+        String result = x > y ? "X" : "Y";
+        System.out.println(result);
+
         if(x > y && x > z) {
             System.out.println("X is greatest...");
         }
