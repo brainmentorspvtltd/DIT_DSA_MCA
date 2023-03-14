@@ -61,3 +61,166 @@ Right Shift Operator - >>
  if x >> y => x / (2^y)
 
 Unsigned Right Shift >>>
+
+Prime Number
+Count Digit in a Number
+Armstrong Number
+Reverse a number
+GCD/HCF
+LCM = (x * y) / GCD
+
+Pattern Programs
+
+*****
+*****
+*****
+*****
+*****
+
+*
+**
+***
+****
+*****
+
+*****
+****
+***
+**
+*
+
+    *
+   **
+  ***
+ ****
+*****
+
+*****
+ ****
+  ***
+   **
+    *
+
+    *
+   ***
+  *****
+ *******
+*********
+
+*********
+ *******
+  *****
+   ***
+    *
+
+*********
+ *     *
+  *   *
+   * *
+    *
+
+**********
+****  ****
+***    ***
+**      **
+*        *
+*        *
+**      **
+***    ***
+****  ****
+**********
+
+    *****
+   ****
+  ***
+ **
+*
+ **
+  ***
+   ****
+    *****
+
+*****
+  ****
+    ***
+      **
+        *
+      **
+    ***
+  ****
+*****
+
+
+
+  *****     *****
+ *******   *******
+********* *********
+****SkillRisers****
+ *****************
+  ***************
+   *************
+    ***********
+     *********
+      *******
+       *****
+        ***
+         *
+
+
+1        1
+12      21
+123    321
+1234  4321
+1234554321
+
+
+5 5 5 5 5 5 5 5 5
+5 4 4 4 4 4 4 4 5
+5 4 3 3 3 3 3 4 5
+5 4 3 2 2 2 3 4 5
+5 4 3 2 1 2 3 4 5
+5 4 3 2 2 2 3 4 5
+5 4 3 3 3 3 3 4 5
+5 4 4 4 4 4 4 4 5
+5 5 5 5 5 5 5 5 5
+
+Labeled For Loop
+
+Switch Case
+=======================================
+
+OOPS
+
+Class and Object
+
+Class
+- Blueprint / Template / Structure
+
+Object
+- instance of a class
+- has some unique characterstics and features
+
+Convert Student Example into grading system
+- take marks in input from user
+- compute average marks and percentage
+- assign grades according to percentage of student
+- Must use SRP and DRY
+
+Employee Salary Slip
+
+Inheritance
+- when we have to reuse properties of a class
+- when we want to upgrade previous features
+
+
+Relationship
+- Is-A
+- Has-A
+
+Final Keyword
+
+- 3 ways to use final Keyword
+  class, method or variable
+
+Super vs This
+
