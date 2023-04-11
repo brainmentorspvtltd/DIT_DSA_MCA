@@ -8,13 +8,16 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+import com.skillrisers.streetfighter.sprites.Ryu;
 import com.skillrisers.streetfighter.utils.Constants;
 
 public class Board extends JPanel implements Constants {
 	
 	BufferedImage imageBg;
+	private Ryu ryu;
 	
 	public Board() throws IOException {
+		ryu = new Ryu();
 		loadBackground();
 	}
 	
@@ -31,6 +34,7 @@ public class Board extends JPanel implements Constants {
 	@Override
 	protected void paintComponent(Graphics g) {
 		showBackground(g);
+		ryu.showPlayer(g);
 	}
 	
 	private void showBackground(Graphics pen) {
