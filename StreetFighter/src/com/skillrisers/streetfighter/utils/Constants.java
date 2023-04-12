@@ -6,4 +6,6 @@ public interface Constants {
 	int SCREENHEIGHT = 900;
 	String BACKGROUND_IMAGE = "game_bg.png";
 	String RYU_IMAGE = "ryu_player.png";
+	String KEN_IMAGE = "ken_flip.png";
+	int SPEED = 10;
 }

@@ -10,6 +10,7 @@ public class GameFrame extends JFrame implements Constants {
 	
 	public GameFrame() throws IOException {
 		setTitle(TITLE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(SCREENWDITH, SCREENHEIGHT);
 		setLocationRelativeTo(null);
 		Board board = new Board();
