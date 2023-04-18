@@ -14,9 +14,27 @@ abstract public class CommonPlayer {
 	protected int h;
 	protected int speed;
 	protected int imageIndex;
+	protected int currentMove;
+	protected boolean isCollide;
 	
 	public abstract BufferedImage defaultImage();
 	
+	public boolean isCollide() {
+		return isCollide;
+	}
+
+	public void setCollide(boolean isCollide) {
+		this.isCollide = isCollide;
+	}
+
+	public int getCurrentMove() {
+		return currentMove;
+	}
+
+	public void setCurrentMove(int currentMove) {
+		this.currentMove = currentMove;
+	}
+
 	public BufferedImage getPlayerImg() {
 		return playerImg;
 	}
@@ -56,7 +74,9 @@ abstract public class CommonPlayer {
 	
 
 	public void move() {
-		x = x + speed;
+		if(!isCollide) {
+			x = x + speed;
+		}
 	}
 	
 	public void showPlayer(Graphics pen) {

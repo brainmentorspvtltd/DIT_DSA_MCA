@@ -49,10 +49,33 @@ public class Board extends JPanel implements Constants {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				ryu.fall();
+				collision();
 				repaint();
 			}
 		});
 		timer.start();
+	}
+
+	
+	private boolean isCollide() {
+		int xDist = Math.abs(ryu.getX() - ken.getX());
+		int yDist = Math.abs(ryu.getY() - ken.getY());
+		int maxH = Math.max(ryu.getH(), ken.getH());
+		int maxW = Math.max(ryu.getW(), ken.getW());
+		return xDist <= maxW && yDist <= maxH;
+	}
+	
+	private void collision() {
+		if(isCollide()) {
+			System.out.println("Collision Detected....");
+			ryu.setCollide(true);
+			ryu.setSpeed(0);
+		}
+		else {
+			ryu.setCollide(false);
+			ryu.setSpeed(SPEED);
+		}
 	}
 	
 	@Override
@@ -90,23 +113,34 @@ public class Board extends JPanel implements Constants {
 				if(e.getKeyCode() == KeyEvent.VK_A) {
 					ryu.setSpeed(-SPEED);
 					ryu.move();
+					ryu.setCollide(false);
+					ryu.setCurrentMove(WALK);
 					//repaint();
 				}
 				else if(e.getKeyCode() == KeyEvent.VK_D) {
 					ryu.setSpeed(SPEED);
 					ryu.move();
+					ryu.setCurrentMove(WALK);
 					//repaint();
+				}
+				else if(e.getKeyCode() == KeyEvent.VK_Z) {
+					ryu.setCurrentMove(PUNCH);
+				}
+				else if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+					ryu.jump();
 				}
 				
 				// Ken Movement
 				if(e.getKeyCode() == KeyEvent.VK_LEFT) {
 					ken.setSpeed(-SPEED);
 					ken.move();
+					ken.setCurrentMove(WALK);
 					//repaint();
 				}
 				else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
 					ken.setSpeed(SPEED);
 					ken.move();
+					ken.setCurrentMove(WALK);
 					//repaint();
 				}
 			}
