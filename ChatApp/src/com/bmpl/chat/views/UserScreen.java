@@ -4,8 +4,18 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
+
 import javax.swing.JTextField;
+
+import com.bmpl.chat.dao.UserDAO;
+import com.bmpl.chat.dto.UserDTO;
+
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 
@@ -53,7 +63,68 @@ public class UserScreen {
 		
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		btnNewButton.setBounds(302, 428, 331, 53);
+		btnNewButton.setBounds(107, 428, 291, 53);
 		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Register");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		btnNewButton_1.setBounds(437, 428, 291, 53);
+		frame.getContentPane().add(btnNewButton_1);
+		
+		btnNewButton_1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				register();
+			}
+		});
+		
+		btnNewButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				login();
+			}
+		});
+		
 	}
+	
+	private void register() {
+		String user_id = textField.getText();
+		//String user_pwd = passwordField.getText();
+		char[] password = passwordField.getPassword();
+		
+		UserDAO userDAO = new UserDAO();
+		UserDTO userDTO = new UserDTO(user_id, password);
+		try {
+			int result = userDAO.doRegister(userDTO);
+			if(result > 0) {
+				JOptionPane.showMessageDialog(frame, "Registered Successfully");
+			}
+			else {
+				JOptionPane.showMessageDialog(frame, "Registration Failed");
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}	
+	}
+	
+	private void login() {
+		String user_id = textField.getText();
+		//String user_pwd = passwordField.getText();
+		char[] password = passwordField.getPassword();
+		
+		UserDAO userDAO = new UserDAO();
+		UserDTO userDTO = new UserDTO(user_id, password);
+		try {
+			if(userDAO.doLogin(userDTO)) {
+				JOptionPane.showMessageDialog(frame, "Login Success");
+			}
+			else {
+				JOptionPane.showMessageDialog(frame, "Login Failed");
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
